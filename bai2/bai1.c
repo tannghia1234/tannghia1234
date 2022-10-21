@@ -48,32 +48,7 @@ char checkkt1(char *kt1){
     printf("nhap sai vui long nhap lai: ");
     return 'n';
 }
-void luachon(int *n,infor *dulieu){
-    char kt1,kt2;
-    switch (*n)
-    {
-    case 1: be_den_lon(dulieu);
-        break;
-    case 2: lon_den_be(dulieu);
-        break;
-    case 3: so_lon_nhat(dulieu);
-        break;
-    default: printf("THOAT!!!");
-        break;
-    }
-    if(*n!=4){
-    printf("ban co muon nhap lai du lieu\nco nhan y\nkhong nhan n\n");
-    do{
-    kt1=getchar();
-    kt2=getchar();
-    }while(checkkt1(&kt1)=='n');
-       if(kt1=='y'){
-       nhapdulieu(dulieu);
-       }
-    }
-    
-}
-void be_den_lon(infor *dulieu){
+void bedenlon(infor *dulieu){
     int temp;
     for(int i =0;i<(dulieu->size);i++){
        for(int j=i;j<(dulieu->size);j++){
@@ -90,7 +65,7 @@ void be_den_lon(infor *dulieu){
     }
 
 }
-void lon_den_be(infor *dulieu){
+void londenbe(infor *dulieu){
     int temp;
     for(int i =0;i<(dulieu->size);i++){
        for(int j=i;j<(dulieu->size);j++){
@@ -108,7 +83,8 @@ void lon_den_be(infor *dulieu){
 
 
 }
-void so_lon_nhat(infor *dulieu){
+
+void solonnhat(infor *dulieu){
     int max = *(dulieu->mang+0);
     for(int i=0;i<(dulieu->size);i++){
        if(max<=*(dulieu->mang+i)){
@@ -117,6 +93,37 @@ void so_lon_nhat(infor *dulieu){
     }
     printf("so lon nhat la: %d\n",max);
 }
+
+
+
+void luachon(int *n,infor *dulieu){
+    char kt1,kt2;
+    switch (*n)
+    {
+    case 1: bedenlon(dulieu);
+        break;
+    case 2: londenbe(dulieu);
+        break;
+    case 3: solonnhat(dulieu);
+        break;
+    default: printf("THOAT!!!");
+        break;
+    }
+    if(*n!=4){
+    printf("ban co muon nhap lai du lieu\nco nhan y\nkhong nhan n\n");
+    do{
+    kt1=getchar();
+    kt2=getchar();
+    }while(checkkt1(&kt1)=='n');
+       if(kt1=='y'){
+       nhapdulieu(dulieu);
+       }
+    }
+    
+}
+
+
+
 
 int main(){
 infor *dulieu,abc;
