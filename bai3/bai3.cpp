@@ -1,3 +1,7 @@
+/*
+dem xem co bao nhieu doi tat trong ro
+
+*/
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>

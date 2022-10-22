@@ -1,3 +1,7 @@
+/*
+nhap nam sinh va tinh so tuoi hien tai
+*/
+
 #include<stdio.h>
 
 typedef struct dateofbirth{

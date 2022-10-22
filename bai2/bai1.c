@@ -1,6 +1,13 @@
+/*nhap mang va 
+    nhap 1 de xep tu be den lon
+    nhap 2 de xep tu lon den be
+    nhap 3 de tim so lon nhat
+    nhap 4 de thoat chuong trinh
+
+ */
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
+
 
 typedef struct x{
     int *mang;
@@ -93,9 +100,6 @@ void solonnhat(infor *dulieu){
     }
     printf("so lon nhat la: %d\n",max);
 }
-
-
-
 void luachon(int *n,infor *dulieu){
     char kt1,kt2;
     switch (*n)
@@ -118,12 +122,8 @@ void luachon(int *n,infor *dulieu){
        if(kt1=='y'){
        nhapdulieu(dulieu);
        }
-    }
-    
+    }  
 }
-
-
-
 
 int main(){
 infor *dulieu,abc;
@@ -136,3 +136,6 @@ nhapdulieu(dulieu);
     luachon(n,dulieu);
 }while(*n!=4);
 }
+
+
+
